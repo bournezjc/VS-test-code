@@ -52,6 +52,8 @@ private:
 	void LRotate(Node* root, Node* node);
 	void RRotate(Node* root, Node* node);
 
+	void destroy(Node* node);
+
 
 };
 

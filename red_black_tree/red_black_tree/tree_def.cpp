@@ -5,6 +5,27 @@
 
 using namespace std;
 
+Tree::Tree():root(nullptr) {}
+
+Tree::~Tree() {
+	destroy(root);
+}
+
+void Tree::destroy(Node* node) {
+	if (node == nullptr) {
+		return;
+	}
+	if (node->left != nullptr) {
+		return destroy(node->left);
+	}
+	if (node->right != nullptr) {
+		return destroy(node->right);
+	}
+	delete node;
+	node = nullptr;
+}
+
+
 Node* Tree::search(int val) {
 	return search(root, val);
 }
